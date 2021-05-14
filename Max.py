@@ -34,6 +34,7 @@ def max_grs(f, u, l, tol=1e-8):
     print('count =', count) # Prints the count number
     return (q1 + q2) * 0.5 # Returns the midpoint of the final interval as the maximum point in the range
 
+# CAN USE THIS AS EXAMPLE BUT CAN SET YOUR OWN FUNCTION
 def max_f(x):
     maxF = (x ** 3 - 6 * x ** 2 + 4 * x + 12)
     return maxF
