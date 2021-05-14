@@ -35,10 +35,10 @@ def grs(f, u, l, tol=1e-8):
 
     return (m1 + m2) * 0.5  # Returns the midpoint of the final interval as the minimum point in the range
 
-
+# CAN USE THIS AS EXAMPLE BUT CAN SET YOUR OWN FUNCTION
 def f(x):
-    tt = (x ** 2 - 6 * x + 15)
-    return tt
+    minF = (x ** 2 - 6 * x + 15)
+    return minF
 
 
 min = grs(f, 2, 4)
