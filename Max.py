@@ -14,7 +14,7 @@ def f(x):  # define your function that goes into parameter f here
     return maxF
 
 
-def max_grs(f, u: float, l: float, tol: float = 1e-8) -> float:
+def max_golden_search(f, u: float, l: float, tol: float = 1e-8) -> float:
 
     """
     Function in python that calculates the maximum point of function in a specified interval
@@ -25,10 +25,10 @@ def max_grs(f, u: float, l: float, tol: float = 1e-8) -> float:
         return: maximum of specified interval
 
 
-    >>> max_grs(f, -2, 4)
+    >>> max_golden_search(f, -2, 4)
     count = 43
     0.3670068499227286
-    >>> max_grs(f, 'm', 4)
+    >>> max_golden_search(f, 'm', 4)
     Traceback (most recent call last):
             ...
     ValueError: Please give numerical values for upper, lower limits
@@ -84,5 +84,7 @@ if __name__ == "__main__":
 """
 # References
 https://en.wikipedia.org/wiki/Golden-section_search
+
+
 
 """
