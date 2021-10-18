@@ -3,10 +3,13 @@
 # ---  IT IS RECOMMENDED TO  USE 'x' AS VARIABLE---
 
 from matplotlib import pyplot as plt  # import module to plot the result
-import numpy as np  # import module to get access to square root and linspace
+import numpy as np
+from numpy.core.function_base import (
+    linspace,
+)  # import module to get access to square root and linspace
 
 
-def max_f(x):  # define your function that goes into parameter f here
+def f(x):  # define your function that goes into parameter f here
     maxF = x ** 3 - 6 * x ** 2 + 4 * x + 12
     return maxF
 
@@ -20,6 +23,16 @@ def max_grs(f, u: float, l: float, tol: float = 1e-8) -> float:
         l: lower boundary of interval
         tol: set an appropriate tolerance value
         return: maximum of specified interval
+
+
+    >>> max_grs(f, -2, 4)
+    count = 43
+    0.3670068499227286
+    >>> max_grs(f, 'm', 4)
+    Traceback (most recent call last):
+            ...
+    ValueError: Please give numerical values for upper, lower limits
+
     """
 
     if type(u) is str or type(l) is str:
@@ -47,21 +60,27 @@ def max_grs(f, u: float, l: float, tol: float = 1e-8) -> float:
             count += 1  # Adds one to the count per iteration
 
         print("count =", count)  # Prints the count number
+
         return (
             q1 + q2
         ) * 0.5  # Returns the midpoint of the final interval as the maximum point in the range
 
 
-maxim = max_grs(max_f, -2, 4)
+def plot_point(
+    point, x_axis=np.linspace(-5, 5, 200)
+):  # 1st parameter is the maximum point 2nd parameter is a numpy linspace
+    """
+    Plots function and maximum point
+    """
+    plt.plot(x_axis, f(x_axis))
+    plt.plot(point, f(point), "bo")
+    plt.show()
 
-print(maxim, max_f(maxim))
 
-x_axis = np.linspace(-5, 5, 200)
+if __name__ == "__main__":
+    import doctest
 
-plt.plot(x_axis, max_f(x_axis))
-plt.plot(maxim, max_f(maxim), "bo")
-plt.show()
-
+    doctest.testmod()
 """
 # References
 https://en.wikipedia.org/wiki/Golden-section_search
