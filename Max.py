@@ -1,7 +1,7 @@
 # Python function that calculates the local extreme point of curvature (vortex)
-# point in a specified interval of a unimodal function.
-# Simply change the maxF variable to the function
-# you'd like to test and set the parameters of max_grs.
+# in a specified interval of a unimodal function.
+# Simply change the target_function argument to the function
+# you'd like to test and set the parameters of max_golden_search.
 # ---WORKS ONLY FOR ONE VARIABLE FUNCTIONS----
 # ---  IT IS RECOMMENDED TO  USE 'x' AS THE VARIABLE---
 """
