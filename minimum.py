@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt  # import module to plot the result
 import numpy as np  # import module to get access to square root and linspace
 
 
-target_function = lambda x: x ** 2 - 6 * x + 15  # type the function of interest here
+target_function = lambda x: 1/x  # type the function of interest here
 
 
 def min_golden_search(
@@ -60,7 +60,7 @@ def min_golden_search(
         ) * 0.5  # Returns the midpoint of the final interval as the minimum point in the range
 
 
-min = min_golden_search(target_function, 3, 4)
+min = min_golden_search(target_function, 0, -2)
 
 print(min)  # TODO: delete
 
@@ -77,6 +77,8 @@ def plot_point(
     plt.plot(min_point, target_function(min_point), fmt)
     plt.show()
 
+
+plot_point()
 
 if __name__ == "__main__":
 
